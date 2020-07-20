@@ -5,7 +5,7 @@ A PhpUnit result printer (based on kujira-phpunit-printer)
 
 ## Requirements
 
- * PHP 5.3.0 or later.
+ * PHP 5.5.0 or later.
 
 ## How it looks
 
@@ -13,7 +13,7 @@ A PhpUnit result printer (based on kujira-phpunit-printer)
 
 ## Installation
 
-composer global require "agotfrid/phpunit-printer"
+composer require --dev "agotfrid/phpunit-printer"
 
 ## Configuration
 
