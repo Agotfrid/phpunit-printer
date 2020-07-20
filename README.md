@@ -6,6 +6,7 @@ A PhpUnit result printer (based on kujira-phpunit-printer)
 ## Requirements
 
  * PHP 5.5.0 or later.
+ * A symfony installation
 
 ## How it looks
 
