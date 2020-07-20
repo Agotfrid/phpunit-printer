@@ -1,4 +1,4 @@
-kujira-phpunit-printer
+phpunit-printer
 ======================
 
 A PhpUnit result printer (based on kujira-phpunit-printer)
@@ -9,7 +9,7 @@ A PhpUnit result printer (based on kujira-phpunit-printer)
 
 ## How it looks
 
-![Alt text](/kujira-phpunit-result-printer.jpg?raw=true "Kujira phpunit result printer")
+![phpunit result printer](kujira-phpunit-result-printer.jpg)
 
 ## Installation
 
@@ -21,10 +21,10 @@ composer require --dev "agotfrid/phpunit-printer"
 
 ```xml
     <phpunit
-        bootstrap="bootstrap.php"
+        bootstrap="config/bootstrap.php"
         colors="true"
-        printerFile="/home/biotope/.composer/vendor/kujira/phpunit-printer/src/Printer.php"
-        printerClass="Kujira\PHPUnit\Printer"
+        printerFile="vendor/agotfrid/phpunit-printer/src/Printer.php"
+        printerClass="agotfrid\PHPUnit\Printer"
     >
 ```
 

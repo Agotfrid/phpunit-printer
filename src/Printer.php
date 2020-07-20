@@ -9,18 +9,24 @@
  * file that was distributed with this source code.
  */
 
-namespace Kujira\PHPUnit;
+namespace agotfrid\PHPUnit;
+
+use PHPUnit\Framework\Test;
+use PHPUnit\Framework\TestFailure;
+use PHPUnit\TextUI\ResultPrinter;
+use PHPUnit\Util\Filter;
 
 /**
- * Kujira Result printer
+ * PHPUnit Result printer
  *
  * It overrides the defaults printer, displaying cross red mark
  * for the failing tests and a green check mark for the passing ones.
  *
  * @author Cyril Barragan <cyril.barragan@gmail.com>
- * @package kujira-phpunit-printer
+ * @author Alexander Gotfrid <alexander.gotfrid.dev@gmail.com>
+ * @package phpunit-printer
  */
-class Printer extends \PHPUnit_TextUI_ResultPrinter
+class Printer extends ResultPrinter
 {
     protected $className;
     protected $previousClassName;
@@ -67,7 +73,7 @@ class Printer extends \PHPUnit_TextUI_ResultPrinter
     /**
      * {@inheritdoc}
      */
-    public function startTest(\PHPUnit_Framework_Test $test)
+    public function startTest(Test $test)
     {
         $this->className = get_class($test);
         parent::startTest($test);
@@ -94,11 +100,11 @@ class Printer extends \PHPUnit_TextUI_ResultPrinter
     /**
      * {@inheritdoc}
      */
-    protected function printDefectTrace(\PHPUnit_Framework_TestFailure $defect)
+    protected function printDefectTrace(TestFailure $defect)
     {
         $this->write($this->formatExceptionMsg($defect->getExceptionAsString()));
 
-        $trace = \PHPUnit_Util_Filter::getFilteredStacktrace(
+        $trace = Filter::getFilteredStacktrace(
           $defect->thrownException()
         );
 
@@ -111,8 +117,8 @@ class Printer extends \PHPUnit_TextUI_ResultPrinter
         while ($e) {
           $this->write(
             "\nCaused by\n" .
-            \PHPUnit_Framework_TestFailure::exceptionToString($e). "\n" .
-            \PHPUnit_Util_Filter::getFilteredStacktrace($e)
+            TestFailure::exceptionToString($e). "\n" .
+            Filter::getFilteredStacktrace($e)
           );
 
           $e = $e->getPrevious();
@@ -120,7 +126,7 @@ class Printer extends \PHPUnit_TextUI_ResultPrinter
     }
 
     /**
-     * Add colors and removes superfluous informations
+     * Add colors and removes superfluous information
      *
      * @param string $exceptionMessage
      * @return string
