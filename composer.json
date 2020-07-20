@@ -1,15 +1,14 @@
 {
-    "name": "kujira/phpunit-printer",
+    "name": "agotfrid/phpunit-printer",
     "type": "library",
     "description": "A PhpUnit result printer",
     "keywords": ["phpunit","result", "printer", "unit", "test"],
-    "homepage": "https://github.com/cyrilbarragan/kujira-phpunit-printer",
+    "homepage": "https://github.com/Agotfrid/kujira-phpunit-printer",
     "license": "MIT",
     "authors": [
         {
-            "name": "Cyril Barragan",
-            "email": "cyril.barragan@gmail.com",
-            "homepage": "http://www.cyril-barragan.com",
+            "name": "Alexander Gotfrid",
+            "email": "alexander.gotfrid.dev@gmail.com",
             "role": "Developer"
         }
     ],
