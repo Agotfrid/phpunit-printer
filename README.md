@@ -1,7 +1,7 @@
 kujira-phpunit-printer
 ======================
 
-A PhpUnit result printer
+A PhpUnit result printer (based on kujira-phpunit-printer)
 
 ## Requirements
 
